@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Reem+Kufi:wght@400;500;600;700&family=Aref+Ruqaa:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-serif);
+  --font-mono: var(--app-font-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* ديوان الأندلس — نظام تصميم أندلسي كلاسيكي فاخر */
+@layer base {
+  :root {
+    /* الكحلي الليلي العميق — خلفية القصر */
+    --background: 222 50% 6%;
+    --foreground: 43 70% 90%;
+
+    --card: 222 42% 11%;
+    --card-foreground: 43 70% 90%;
+
+    --popover: 222 47% 9%;
+    --popover-foreground: 43 70% 90%;
+
+    /* الذهبي الأندلسي الملكي */
+    --primary: 42 78% 56%;
+    --primary-foreground: 222 50% 6%;
+    --primary-glow: 45 95% 68%;
+
+    /* الزمردي الأخضر — قبة المحراب */
+    --secondary: 158 50% 24%;
+    --secondary-foreground: 43 70% 92%;
+
+    --muted: 222 32% 16%;
+    --muted-foreground: 43 28% 68%;
+
+    /* الأحمر القرميدي الأندلسي */
+    --accent: 12 70% 48%;
+    --accent-foreground: 43 70% 95%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 43 70% 95%;
+
+    --border: 42 38% 28%;
+    --input: 222 30% 16%;
+    --ring: 42 78% 56%;
+
+    --radius: 0.75rem;
+
+    --app-font-sans: 'Reem Kufi', 'Tajawal', sans-serif;
+    --app-font-serif: 'Amiri', serif;
+    --app-font-mono: 'Menlo', monospace;
+
+    /* تدرجات أندلسية فاخرة */
+    --gradient-royal: linear-gradient(135deg, hsl(222 50% 6%) 0%, hsl(222 42% 12%) 50%, hsl(158 45% 14%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(38 80% 50%) 0%, hsl(45 95% 68%) 50%, hsl(42 78% 56%) 100%);
+    --gradient-night: radial-gradient(ellipse at top, hsl(222 45% 12%) 0%, hsl(222 50% 5%) 70%);
+    --gradient-emerald: linear-gradient(135deg, hsl(158 50% 24%) 0%, hsl(170 55% 30%) 100%);
+    --gradient-parchment: linear-gradient(180deg, hsl(38 35% 14%) 0%, hsl(222 35% 10%) 100%);
+
+    /* ظلال فاخرة */
+    --shadow-gold: 0 10px 40px -10px hsl(42 78% 56% / 0.45);
+    --shadow-deep: 0 25px 70px -15px hsl(222 60% 3% / 0.8);
+    --shadow-glow: 0 0 50px hsl(45 95% 68% / 0.35);
+    --shadow-inset: inset 0 1px 0 0 hsl(45 95% 68% / 0.12);
+
+    /* انتقالات */
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 222 50% 6%;
+    --sidebar-foreground: 43 70% 90%;
+    --sidebar-primary: 42 78% 56%;
+    --sidebar-primary-foreground: 222 50% 6%;
+    --sidebar-accent: 222 30% 14%;
+    --sidebar-accent-foreground: 43 70% 90%;
+    --sidebar-border: 42 35% 22%;
+    --sidebar-ring: 42 78% 56%;
+  }
+
+  /* الوضع النهاري — رق أندلسي ذهبي فاتح أنيق */
+  .light {
+    --background: 38 55% 96%;
+    --foreground: 222 55% 10%;
+
+    --card: 40 60% 99%;
+    --card-foreground: 222 55% 10%;
+
+    --popover: 40 60% 99%;
+    --popover-foreground: 222 55% 10%;
+
+    --primary: 32 80% 38%;
+    --primary-foreground: 40 60% 99%;
+    --primary-glow: 38 85% 50%;
+
+    --secondary: 158 45% 32%;
+    --secondary-foreground: 40 60% 99%;
+
+    --muted: 38 35% 90%;
+    --muted-foreground: 222 30% 30%;
+
+    --accent: 12 70% 45%;
+    --accent-foreground: 40 60% 99%;
+
+    --destructive: 0 75% 45%;
+    --destructive-foreground: 40 60% 99%;
+
+    --border: 32 45% 60%;
+    --input: 38 35% 88%;
+    --ring: 32 80% 38%;
+
+    --gradient-royal: linear-gradient(135deg, hsl(38 55% 96%) 0%, hsl(38 50% 92%) 50%, hsl(40 45% 88%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(32 80% 38%) 0%, hsl(38 85% 50%) 50%, hsl(35 75% 45%) 100%);
+    --gradient-night: radial-gradient(ellipse at top, hsl(38 55% 96%) 0%, hsl(38 45% 88%) 70%);
+    --gradient-emerald: linear-gradient(135deg, hsl(158 45% 32%) 0%, hsl(170 50% 38%) 100%);
+    --gradient-parchment: linear-gradient(180deg, hsl(40 60% 97%) 0%, hsl(38 45% 90%) 100%);
+
+    --shadow-gold: 0 10px 40px -10px hsl(32 80% 38% / 0.4);
+    --shadow-deep: 0 25px 70px -15px hsl(222 30% 50% / 0.3);
+    --shadow-glow: 0 0 50px hsl(38 85% 50% / 0.4);
+    --shadow-inset: inset 0 1px 0 0 hsl(32 80% 38% / 0.18);
+
+    --sidebar-background: 38 55% 96%;
+    --sidebar-foreground: 222 55% 10%;
+    --sidebar-primary: 32 80% 38%;
+    --sidebar-primary-foreground: 40 60% 99%;
+    --sidebar-accent: 38 35% 90%;
+    --sidebar-accent-foreground: 222 55% 10%;
+    --sidebar-border: 32 45% 60%;
+    --sidebar-ring: 32 80% 38%;
+  }
+}
+
+@layer base {
+  :root { --app-font-scale: 1; }
+  * { @apply border-border; }
+  html, body, #root {
+    background-color: hsl(var(--background));
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    width: 100%;
+    overscroll-behavior: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  html {
+    direction: rtl;
+    font-size: calc(16px * var(--app-font-scale));
+    height: 100%;
+    height: 100dvh;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--app-font-sans);
+    background: var(--gradient-night);
+    background-attachment: fixed;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: 100%;
+    overflow-x: hidden;
+  }
+  #root {
+    background: var(--gradient-night);
+    background-attachment: fixed;
+  }
+  h1, h2, h3, h4 { font-family: var(--app-font-serif); }
+
+  ::selection { background: hsl(var(--primary) / 0.3); color: hsl(var(--primary-glow)); }
+}
+
+@layer components {
+  .ornament-border {
+    position: relative;
+    border: 1px solid hsl(var(--primary) / 0.25);
+    background: linear-gradient(135deg, hsl(var(--card) / 0.85), hsl(var(--card) / 0.5));
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-inset);
+  }
+  .ornament-border::before,
+  .ornament-border::after {
+    content: '✦';
+    position: absolute;
+    color: hsl(var(--primary));
+    font-size: 0.7rem;
+    opacity: 0.7;
+    text-shadow: 0 0 8px hsl(var(--primary) / 0.6);
+  }
+  .ornament-border::before { top: -7px; right: 14px; }
+  .ornament-border::after  { bottom: -7px; left: 14px; }
+
+  .moorish-arch {
+    border-radius: 50% 50% 0.75rem 0.75rem / 60% 60% 0.75rem 0.75rem;
+  }
+
+  .andalusi-frame {
+    position: relative;
+    padding: 1.25rem;
+    background: linear-gradient(135deg, hsl(var(--card) / 0.9), hsl(222 42% 9% / 0.9));
+    border: 1px solid hsl(var(--primary) / 0.3);
+    border-radius: var(--radius);
+    box-shadow:
+      inset 0 0 0 1px hsl(var(--primary) / 0.08),
+      inset 0 0 0 6px hsl(var(--background)),
+      inset 0 0 0 7px hsl(var(--primary) / 0.2),
+      var(--shadow-deep);
+  }
+
+  .gold-text {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px hsl(var(--primary) / 0.3));
+  }
+
+  .divider-andalusi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1rem auto;
+    color: hsl(var(--primary));
+  }
+  .divider-andalusi::before,
+  .divider-andalusi::after {
+    content: '';
+    height: 1px;
+    width: 3rem;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.6), transparent);
+  }
+
+  .glow-on-hover {
+    transition: all 0.4s var(--transition-smooth);
+  }
+  .glow-on-hover:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-3px);
+    border-color: hsl(var(--primary) / 0.6);
+  }
+
+  .btn-andalusi {
+    background: var(--gradient-gold);
+    color: hsl(var(--primary-foreground));
+    font-weight: 600;
+    border: 1px solid hsl(var(--primary) / 0.5);
+    box-shadow: var(--shadow-gold), inset 0 1px 0 hsl(45 100% 80% / 0.4);
+    transition: all 0.3s;
+  }
+  .btn-andalusi:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow), inset 0 1px 0 hsl(45 100% 85% / 0.5);
+  }
+
+  .font-arabic { font-family: 'Reem Kufi', 'Tajawal', sans-serif; }
+  .font-display { font-family: 'Aref Ruqaa', 'Amiri', serif; }
+  .font-quran { font-family: 'Amiri', 'Scheherazade New', serif; }
+  .font-poem { font-family: 'Scheherazade New', 'Amiri', serif; }
+  .text-balance { text-wrap: balance; }
+  .bg-gradient-gold { background: var(--gradient-gold); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+}
+
+/* رسوم متحركة */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+@keyframes shimmer-gold {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+  50% { box-shadow: 0 0 50px hsl(var(--primary) / 0.6); }
+}
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
+.animate-rotate-slow { animation: rotate-slow 60s linear infinite; }
+
+/* ============ خلفيات قابلة للاختيار من الإعدادات ============ */
+html[data-bg="stars"] body {
+  background:
+    radial-gradient(3px 3px at 12% 18%, hsl(var(--primary-glow) / 1), transparent 60%),
+    radial-gradient(2px 2px at 28% 42%, hsl(var(--primary) / 0.95), transparent 60%),
+    radial-gradient(2.5px 2.5px at 55% 12%, hsl(var(--primary-glow) / 0.95), transparent 60%),
+    radial-gradient(1.5px 1.5px at 72% 55%, hsl(var(--primary) / 0.9), transparent 60%),
+    radial-gradient(3px 3px at 88% 28%, hsl(var(--primary-glow) / 1), transparent 60%),
+    radial-gradient(2px 2px at 18% 78%, hsl(var(--primary) / 0.9), transparent 60%),
+    radial-gradient(2.5px 2.5px at 62% 88%, hsl(var(--primary-glow) / 0.95), transparent 60%),
+    radial-gradient(1.5px 1.5px at 92% 72%, hsl(var(--primary) / 0.85), transparent 60%),
+    radial-gradient(ellipse at 50% 0%, hsl(var(--primary) / 0.18), transparent 55%),
+    var(--gradient-night);
+  background-attachment: fixed;
+  background-size: 380px 380px, 320px 320px, 420px 420px, 280px 280px, 360px 360px, 340px 340px, 300px 300px, 260px 260px, cover, cover;
+}
+html[data-bg="geometric"] body {
+  background-color: hsl(var(--background));
+  background-image:
+    repeating-linear-gradient(60deg, hsl(var(--primary) / 0.18) 0 2px, transparent 2px 28px),
+    repeating-linear-gradient(120deg, hsl(var(--primary) / 0.18) 0 2px, transparent 2px 28px),
+    repeating-linear-gradient(0deg, hsl(var(--secondary) / 0.14) 0 2px, transparent 2px 28px),
+    radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.12), transparent 60%),
+    var(--gradient-night);
+  background-size: 56px 56px, 56px 56px, 56px 56px, cover, cover;
+  background-attachment: fixed;
+}
+html[data-bg="plain"] body {
+  background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--card)) 100%);
+  background-attachment: fixed;
+}
+html[data-bg="mosque"] body {
+  background:
+    radial-gradient(ellipse 70% 40% at 50% 0%, hsl(var(--primary) / 0.45), transparent 70%),
+    radial-gradient(ellipse 80% 50% at 50% 100%, hsl(var(--secondary) / 0.4), transparent 70%),
+    radial-gradient(circle at 20% 50%, hsl(var(--primary-glow) / 0.18), transparent 50%),
+    radial-gradient(circle at 80% 50%, hsl(var(--accent) / 0.18), transparent 50%),
+    var(--gradient-night);
+  background-attachment: fixed;
+}
+html[data-bg="desert"] body {
+  background:
+    radial-gradient(ellipse 100% 60% at 0% 100%, hsl(20 85% 55% / 0.55), transparent 70%),
+    radial-gradient(ellipse 80% 40% at 100% 0%, hsl(45 95% 60% / 0.4), transparent 70%),
+    radial-gradient(ellipse 60% 30% at 50% 100%, hsl(15 80% 45% / 0.35), transparent 70%),
+    linear-gradient(180deg, hsl(var(--background)) 0%, hsl(20 40% 12%) 100%);
+  background-attachment: fixed;
+}
+html[data-bg="andalusi"] body {
+  background:
+    radial-gradient(ellipse at top, hsl(var(--primary) / 0.18), transparent 60%),
+    radial-gradient(ellipse at bottom, hsl(var(--secondary) / 0.15), transparent 60%),
+    var(--gradient-night);
+  background-attachment: fixed;
+}
+
+/* أخفِ زخرفة الأندلسي الثابتة عندما يختار المستخدم خلفية أخرى */
+html:not([data-bg="andalusi"]) .andalusi-overlay { display: none; }
