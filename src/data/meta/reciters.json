@@ -1,0 +1,17 @@
+[
+  {
+    "id": "afasy",
+    "name": "مشاري العفاسي",
+    "streamBase": "https://everyayah.com/data/Alafasy_128kbps/"
+  },
+  {
+    "id": "maher",
+    "name": "ماهر المعيقلي",
+    "streamBase": "https://everyayah.com/data/MaherAlMuaiqly128kbps/"
+  },
+  {
+    "id": "sudais",
+    "name": "السديس",
+    "streamBase": "https://everyayah.com/data/Abdurrahmaan_As-Sudais_192kbps/"
+  }
+]

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang='ar' dir='rtl'>
+<head>
+<meta charset='UTF-8'/><meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+<title>الديوان - النسخة المحلية النهائية</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'><link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+<link href='https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='./styles.css'>
+</head>
+<body>
+<div id='splashScreen' class='splash-screen' aria-live='polite'>
+  <div class='splash-card'>
+    <img src='./assets/welcome-logo.jpg' alt='شعار تطبيق الديوان' width='180' height='180'>
+    <h1>الديوان</h1>
+    <p class='splash-sub'>السلام عليكم ورحمة الله وبركاته</p>
+    <p class='splash-text'>مرحباً بك في الديوان، رفيقك اليومي للقرآن والأذكار والأدعية والقبلة والمواقيت.</p>
+    <button id='enterApp' class='primary splash-btn'>دخول التطبيق</button>
+  </div>
+</div>
+<a href='#main' class='skip'>تجاوز للمحتوى</a>
+<div class='layout'>
+<aside class='sidebar'>
+<div class='brand'><img src='./assets/welcome-logo.jpg' alt='شعار الديوان' width='58' height='58'><div><h1>الديوان</h1><p>النسخة المحلية النهائية</p></div></div>
+<button id='themeToggle' class='theme-btn'>تبديل النمط</button>
+<nav id='nav' class='nav'></nav>
+</aside>
+<main id='main' class='main'>
+<section class='hero'>
+<div>
+<span class='tag'>هوية أندلسية • قرآن • دعاء • صوتيات</span>
+<h2>تطبيق الديوان الشامل</h2>
+<p>واجهة عربية أصيلة تجمع القرآن الكريم كاملاً، والأذكار، والأدعية، والقبلة، والمواقيت، والصوتيات في تجربة واحدة.</p>
+<div class='hero-actions'><button class='primary' data-open='quran'>ابدأ بالقرآن</button><button class='ghost' data-open='prayer'>المواقيت</button></div>
+</div>
+<div class='hero-logo'><div class='glow'></div><img src='./assets/welcome-logo.jpg' alt='الهوية البصرية' width='220' height='220'></div>
+</section>
+<section id='stats' class='stats'></section>
+<section id='view' class='view-grid'></section>
+</main>
+</div>
+<script type='module' src='./app.js'></script>
+</body>
+</html>
